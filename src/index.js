@@ -62,15 +62,24 @@ const MagnusAIChatBot = ({
         <TouchableOpacity
           style={{
             // width,
-            height: height - keyboardHeight - height / 2.1,
+            height:
+              keyboardHeight ?
+                height - keyboardHeight - height / 2.3
+                : height - keyboardHeight - height / 1.1
+            ,
             backgroundColor: 'rgba(0,0,0,0.4)',
           }}
           onPress={_ => setVisible(false)}
         />
         <WebView
+          scrollEnabled={false}
           style={{
             width,
-            maxHeight: height / 2,
+            maxHeight:
+              keyboardHeight ?
+                height / 2.2
+                : height
+            ,
             marginBottom: keyboardHeight ? 0 : 5,
             backgroundColor: 'rgba(0,0,0,0.16)'
           }}
