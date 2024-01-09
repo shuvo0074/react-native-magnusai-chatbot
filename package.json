@@ -1,6 +1,6 @@
 {
   "name": "magnusai-chatbot-react-native",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "React Native SDK for magnus AI chatbot",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -31,7 +31,7 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
-    "prepare": "bob build",
+    "prepare": "bob package",
     "release": "release-it"
   },
   "keywords": [
@@ -159,5 +159,8 @@
         }
       ]
     ]
+  },
+  "directories": {
+    "example": "example"
   }
 }
