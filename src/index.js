@@ -64,8 +64,8 @@ const MagnusAIChatBot = ({
             // width,
             height:
               keyboardHeight ?
-                height - keyboardHeight - height / 2.3
-                : height - keyboardHeight - height / 1.1
+                height - keyboardHeight - height / 2.1
+                : 44
             ,
             backgroundColor: 'rgba(0,0,0,0.4)',
           }}
@@ -77,8 +77,8 @@ const MagnusAIChatBot = ({
             width,
             maxHeight:
               keyboardHeight ?
-                height / 2.2
-                : height
+                height / 2
+                : height + 44
             ,
             marginBottom: keyboardHeight ? 0 : 5,
             backgroundColor: 'rgba(0,0,0,0.16)'
