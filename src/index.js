@@ -92,7 +92,7 @@ const MagnusAIChatBot = ({
           </head>
           
             <iframe
-            src="http://localhost:5173/?brainId=${brain_id}"
+            src="http://dev-magnusai.otoride.co:8033/?brainId=${brain_id}"
             style="width: 100%; height: 100%; border: none; border-top-left-radius: 12px; border-top-right-radius: 12px;"
             />
              
