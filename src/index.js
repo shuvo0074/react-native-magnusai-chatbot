@@ -5,7 +5,10 @@ const { height, width } = Dimensions.get('window')
 
 const MagnusAIChatBot = ({
   bgStyle = {},
-  brain_id
+  brain_id,
+  show_button = true,
+  panel_visible = false,
+  onDismiss = _ => { }
 }) => {
   const [visible, setVisible] = useState(false)
   const [keyboardHeight, setkeyboardHeight] = useState(0)
@@ -21,37 +24,51 @@ const MagnusAIChatBot = ({
     }
 
   }, [])
+
+  useEffect(() => {
+    setVisible(panel_visible)
+  }, [panel_visible])
+
+  useEffect(() => {
+    if (!visible)
+      onDismiss()
+  }, [visible])
+  
   return (
     <View>
-      <TouchableOpacity
-        style={[{
-          height: 45,
-          width: 45,
-          borderRadius: 30,
-          alignItems: 'center',
-          justifyContent: 'center',
-          shadowColor: '#a9acae',
-          backgroundColor: 'white',
-          shadowOffset: {
-            width: 4,
-            height: 4,
-          },
-          shadowRadius: 4.4,
-          shadowOpacity: 0.3,
-          elevation: 3,
-          zIndex: 1000
-        }, bgStyle]}
-        onPress={_ => setVisible(true)}
-      >
-        <Image
-          source={{ uri: 'https://cdn.iconscout.com/icon/free/png-512/free-chat-1434-460368.png' }}
-          style={{
-            height: 22,
-            width: 22,
-            backgroundColor: 'transparent',
-          }}
-        />
-      </TouchableOpacity>
+      {
+        show_button ?
+          <TouchableOpacity
+            style={[{
+              height: 45,
+              width: 45,
+              borderRadius: 30,
+              alignItems: 'center',
+              justifyContent: 'center',
+              shadowColor: '#a9acae',
+              backgroundColor: 'white',
+              shadowOffset: {
+                width: 4,
+                height: 4,
+              },
+              shadowRadius: 4.4,
+              shadowOpacity: 0.3,
+              elevation: 3,
+              zIndex: 1000
+            }, bgStyle]}
+            onPress={_ => setVisible(true)}
+          >
+            <Image
+              source={{ uri: 'https://cdn.iconscout.com/icon/free/png-512/free-chat-1434-460368.png' }}
+              style={{
+                height: 22,
+                width: 22,
+                backgroundColor: 'transparent',
+              }}
+            />
+          </TouchableOpacity>
+          : null
+      }
       <Modal
         animationType={'slide'}
         transparent={true}
