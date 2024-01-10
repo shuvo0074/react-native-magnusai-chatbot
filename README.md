@@ -5,22 +5,26 @@ React Native SDK for magnus AI chatbot
 ## Installation
 
 ```sh
-npm install magnusai-chatbot-react-native
+npm install magnusai-chatbot-react-native react-native-webview
 ```
 
 ## Usage
 
 ```js
-import { multiply } from 'magnusai-chatbot-react-native';
+import MagnusAIChatBot from 'magnusai-chatbot-react-native';
 
 // ...
 
-const result = await multiply(3, 7);
+<MagnusAIChatBot
+    bgStyle={{
+        position: 'absolute',
+        top: 17,
+        right: 17,
+        borderRadius: 50
+    }} // for a floating button on top left
+    brain_id={"your brain id from the dashboard"}
+/>
 ```
-
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
 
 ## License
 
